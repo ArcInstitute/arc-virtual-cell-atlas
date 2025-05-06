@@ -1,4 +1,4 @@
-name: scbasecamp_env
+name: scbasecount-py
 channels:
   - conda-forge
   - bioconda

@@ -1,4 +1,4 @@
-name: scbasecamp_renv
+name: scbasecount-r
 channels:
   - conda-forge
   - bioconda
