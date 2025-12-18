@@ -22,4 +22,8 @@ The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M 
 
 [Documentation](./scBaseCount/README.md)
 
+# Virtual Cell Challenge
+
+[Documentation](./virtual-cell-challenge/README.md)
+
 > Note `scBaseCount` is the new name for `scBaseCamp`
