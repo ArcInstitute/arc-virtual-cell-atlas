@@ -1,14 +1,23 @@
 Tahoe-100M
 ==========
 
+> [!IMPORTANT]
+> **Data Migration Notice**: This dataset is now available on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute). 
+> 
+> **Note**: The new bucket is subject to [Requester Pays](https://docs.cloud.google.com/storage/docs/requester-pays). Users can access up to 2TB of data per month for free before fees apply.
+> 
+> Access to the current GCS bucket (`gs://arc-ctc-tahoe100/`) will be deprecated on **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
+
 # Overview
 
 * **Format:** 
   * Count matrices: h5ad (AnnData)
   * Metadata: Parquet
 * **Data host:** 
-  * Google Cloud Storage
-  * Path: `gs://arc-ctc-tahoe100/`
+  * [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) (Recommended)
+  * Google Cloud Storage (Google Marketplace bucket: `gs://arc-institute-virtual-cell-atlas`)
+  * Google Cloud Storage (Deprecated: access ends March 31, 2026)
+    * Path: `gs://arc-ctc-tahoe100/`
 * **Statistics**
   * Sample count: 1344
   * Cell count: 100648790
