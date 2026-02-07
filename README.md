@@ -9,7 +9,7 @@ Arc Virtual Cell Atlas
 > Access to the current GCS buckets (`gs://arc-ctc-tahoe100/` and `gs://arc-scbasecount/`) will be deprecated on **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
 
 The Arc Virtual Cell Atlas is a collection of high quality, curated, open datasets assembled for the purpose of accelerating the creation of virtual cell models.
-The atlas includes both observational and perturbational data from over 330 million cells (and growing).
+The atlas includes both observational and perturbational data from over 602 million cells (and growing).
 
 The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M and [Arc’s](https://arcinstitute.org/) AI agent-curated scBaseCount dataset.
 
@@ -25,5 +25,3 @@ The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M 
 # Virtual Cell Challenge
 
 [Documentation](./virtual-cell-challenge/README.md)
-
-> Note `scBaseCount` is the new name for `scBaseCamp`

@@ -20,7 +20,7 @@ Tahoe-100M
     * Path: `gs://arc-ctc-tahoe100/`
 * **Statistics**
   * Sample count: 1344
-  * Cell count: 100648790
+  * Cell count: 100,648,790
 
 ## Manuscript
 
@@ -56,7 +56,7 @@ Tahoe-100M
 # Notes
 
 * `.h5ad.gz` file extensions denote internal gzip compression. 
-  * See the [Python tutorial](./tutorial-py.ipynb) on reading in the anndata objects.
+  * See the [Python tutorial](./tutorial-py.ipynb) on reading in the AnnData objects.
 
 
 # Resources
