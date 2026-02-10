@@ -74,7 +74,6 @@ Please be mindful of the egress costs associated with downloading data from Goog
     * `ambiguous`: Ambiguous reads are assigned to each read based on the read sequence and the barcode sequence.
       * `ambiguous` layer
 
-
 ### Added metadata (see initial release for other metadata fields)
 
 #### Sample Metadata (SRX accession level)
@@ -89,6 +88,17 @@ Please be mindful of the egress costs associated with downloading data from Goog
 * Gene count per feature type
 * `cell_type`: Cell type annotation (if available)
 * `cell_type_ontology_term_id`: Cell type ontology term ID (if available)
+
+### Important notes
+
+#### `NRX` accessions
+
+We created the `NRX` accession prefix and use it to identify datasets not in the SRA/ENA.
+
+`NRX` accessions are datasets that do not have any SRX/ERX accession ID. 
+These datasets are associated with CZI CELLxGENE collections and were made public but never uploaded to the SRA/ENA.
+We manually processed these datasets outside of the SRAgent/scRecounter workflow.
+In order to associate an NRX accession with a CZI collection, you can use the sample metadata tables (parquet files).  
 
 ## 2025-02-01: Initial release
 
