@@ -100,6 +100,10 @@ These datasets are associated with CZI CELLxGENE collections and were made publi
 We manually processed these datasets outside of the SRAgent/scRecounter workflow.
 In order to associate an NRX accession with a CZI collection, you can use the sample metadata tables (parquet files).  
 
+#### Disease annotations
+
+Disease annotations are extracted at the **study level**, not the sample or cell level. SRAgent derives disease labels from author-supplied abstracts in the SRA, which describe the overall study design (e.g., "A study of COVID-19 infection") rather than the status of individual donors or samples. As a result, a single disease label (e.g., "COVID-19") may be propagated to all samples within a study, including healthy controls.
+
 ## 2025-02-01: Initial release
 
 ### Statistics
