@@ -45,12 +45,15 @@ bioRxiv 2025.02.27.640494; doi: [https://doi.org/10.1101/2025.02.27.640494](http
 See the tutorials below on programmatically accessing the data.
 
 You can also directly download the data with the [gsutil tool](https://cloud.google.com/storage/docs/gsutil).
-Please be mindful of the egress costs associated with downloading data from Google Cloud Storage (costs to the Arc Institute).
 
 
 # Releases
 
 ## 2026-01-12: Publication release
+
+> ‼️ This release is a revamp and expansion of the initial release. 
+> It expands on the cells, metadata, and STARsolo count features (see below). 
+> The initial release can generally be considered deprecated, but we will continue to support it.
 
 ### Statistics
 
@@ -171,8 +174,6 @@ This enables RNA velocity analyses to infer dynamic cellular processes.
   * `GeneFull*` will have more counts than `Gene` due to the mapping algorithm.
   * `Velocyto` h5ad files include 3 layers: `spliced`, `unspliced`, and `ambiguous`.
      * The `X` matrix is `spliced` matrix, in addition to the `spliced` layer.
-* We are currently not using [TileDB-SOMA](https://tiledbsoma.readthedocs.io/en/latest/index.html)
-  due to some challenges with scaling.
 
 
 # Tutorials
