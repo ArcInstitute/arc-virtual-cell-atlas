@@ -13,6 +13,7 @@ The atlas includes both observational and perturbational data from over 602 mill
 
 The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M and [Arc’s](https://arcinstitute.org/) AI agent-curated scBaseCount dataset.
 
+To explore the atlas via a UI, you can take a look at its LaminDB mirror: https://lamin.ai/laminlabs/arc-virtual-cell-atlas
 
 # Tahoe-100M
 
