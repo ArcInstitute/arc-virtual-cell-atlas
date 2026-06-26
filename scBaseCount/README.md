@@ -83,6 +83,8 @@ You can also directly download the data with the [gsutil tool](https://cloud.goo
 
 * `tissue_ontology_term_id`: Tissue ontology term ID (if applicable)
 * `disease_ontology_term_id`: Disease ontology term ID (if applicable)
+* `single_disease_confidence`: Per-SRX confidence (`low` / `medium` / `high`) that the disease label applies to **all** cells in the sample, i.e. that the SRX is a homogeneous single-disease cohort rather than a case/control mix. Populated only where `disease_ontology_term_id` is non-null; otherwise empty. See the [Disease annotations](#disease-annotations) note below.
+* `single_disease_confidence_reasoning`: One- to two-sentence justification for the `single_disease_confidence` call (free text).
 * `antibody_derived_tag` : SRAgent was used to determine whether the SRX accession metadata in the SRA/ENA included any mention of "antibody derived tag". Such SRX accessions were labeled as "maybe" for ADT status.
 
 #### Cell-level Metadata (per observation)
@@ -106,6 +108,8 @@ In order to associate an NRX accession with a CZI collection, you can use the sa
 #### Disease annotations
 
 Disease annotations are extracted at the **study level**, not the sample or cell level. SRAgent derives disease labels from author-supplied abstracts in the SRA, which describe the overall study design (e.g., "A study of COVID-19 infection") rather than the status of individual donors or samples. As a result, a single disease label (e.g., "COVID-19") may be propagated to all samples within a study, including healthy controls.
+
+To help users gauge this risk per sample, each disease-labeled SRX carries a `single_disease_confidence` score (`low` / `medium` / `high`) and a short `single_disease_confidence_reasoning` string. The score reflects how confident we are that the disease label applies to **all** cells in that SRX, synthesizing independent evidence the original label did not use — submitter-provided BioSample attributes (e.g. `disease_state`, `affection_status`, healthy/control keys) and study-level free text (BioProject summary, linked PubMed abstract, GEO title/summary). A `low` score flags an SRX that likely contains healthy/control donors or is otherwise a mixed cohort, so disease-labeled cells should not all be assumed diseased; `high` indicates multiple sources agree on a single-disease cohort. The score is populated only for SRX with a non-null `disease_ontology_term_id`. Note this tells you *that* a sample may be heterogeneous, not *which* individual cells are affected — resolving cells within a pooled multi-donor SRX is not possible from public metadata alone. See the manuscript Methods ("Donor-level confidence audit of disease labels") for the prompt and calibration metrics.
 
 ## 2025-02-01: Initial release
 
