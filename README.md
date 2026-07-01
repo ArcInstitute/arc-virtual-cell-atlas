@@ -6,7 +6,7 @@ Arc Virtual Cell Atlas
 > 
 > **Note**: The new bucket is subject to [Requester Pays](https://docs.cloud.google.com/storage/docs/requester-pays). Users can access up to 2TB of data per month for free before fees apply.
 > 
-> Access to the current GCS buckets (`gs://arc-ctc-tahoe100/` and `gs://arc-scbasecount/`) will be deprecated on **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
+> Access to the current GCS buckets (`gs://arc-ctc-tahoe100/` and `gs://arc-scbasecount/`) has been removed as of **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
 
 The Arc Virtual Cell Atlas is a collection of high quality, curated, open datasets assembled for the purpose of accelerating the creation of virtual cell models.
 The atlas includes both observational and perturbational data from over 602 million cells (and growing).
