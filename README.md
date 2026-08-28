@@ -28,12 +28,31 @@ The Marketplace bucket `gs://arc-institute-virtual-cell-atlas` uses [Requester P
 | 2. Choose the billing project | During subscription, select the exact Google Cloud project you will use to read the data |
 | 3. Use that same project | Pass that project ID on **every** command — `-u` for `gsutil`, `--billing-project` for `gcloud storage`. A different project ID forfeits the free tier |
 
+Scope every transfer to the dataset prefix you actually need — syncing the bucket root pulls the entire atlas:
+
+| Prefix | Contents |
+|--------|----------|
+| `gs://arc-institute-virtual-cell-atlas/scbasecount/` | scBaseCount, partitioned by release, quantification, and species |
+| `gs://arc-institute-virtual-cell-atlas/tahoe100M/` | Tahoe-100M |
+| `gs://arc-institute-virtual-cell-atlas/virtual-cell-challenge/` | Virtual Cell Challenge data |
+
 ```bash
-# gsutil
-gsutil -u <SUBSCRIBED_PROJECT_ID> rsync -r gs://arc-institute-virtual-cell-atlas /path/to/local/destination
+# gsutil — one species of one scBaseCount release, not the whole atlas
+gsutil -u <SUBSCRIBED_PROJECT_ID> rsync -r \
+  gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Homo_sapiens \
+  /path/to/local/destination
 
 # gcloud storage
-gcloud storage rsync -r --billing-project=<SUBSCRIBED_PROJECT_ID> gs://arc-institute-virtual-cell-atlas /path/to/local/destination
+gcloud storage rsync -r --billing-project=<SUBSCRIBED_PROJECT_ID> \
+  gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Homo_sapiens \
+  /path/to/local/destination
+```
+
+Note that 2TB/month is easily exceeded even without syncing the whole atlas — a single species within a single scBaseCount release and quantification can run to several TB. Check the size of a prefix before transferring it:
+
+```bash
+gcloud storage du -s --readable-sizes --billing-project=<SUBSCRIBED_PROJECT_ID> \
+  gs://arc-institute-virtual-cell-atlas/<PREFIX>
 ```
 
 **Credits are applied asynchronously**, so a charge appearing on your dashboard does not by itself mean the free tier failed. Egress and operation charges are written to the billing log first; the offsetting Marketplace credits can take **24–48 hours** to show up, and under some billing configurations are applied as an end-of-cycle promotional discount rather than in real time. Check your Cloud Billing reports grouped by **Credits** to see whether an offsetting credit has posted or is pending.
