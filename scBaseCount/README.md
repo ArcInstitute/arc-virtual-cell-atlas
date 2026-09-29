@@ -4,7 +4,7 @@ scBaseCount
 > [!IMPORTANT]
 > **Data Migration Notice**: This dataset is now available on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute). 
 > 
-> **Note**: The new bucket is subject to [Requester Pays](https://docs.cloud.google.com/storage/docs/requester-pays), with up to 2TB of data per month at no cost — but **only from a project subscribed to the dataset on the Marketplace**. Downloading from an unsubscribed project is billed at standard rates; see [Accessing the data](../README.md#accessing-the-data) for the required steps.
+> **Note**: The bucket does **not** require a billing project. Do **not** pass `-u` / `--billing-project` — doing so bills the download to your own project. See [Accessing the data](../README.md#accessing-the-data).
 > 
 > Access to the current GCS bucket (`gs://arc-scbasecount`) will be deprecated on **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
 
