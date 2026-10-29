@@ -1,12 +1,7 @@
 scBaseCount
 ===========
 
-> [!IMPORTANT]
-> **Data Migration Notice**: This dataset is now available on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute). 
-> 
-> **Note**: The new bucket is subject to [Requester Pays](https://docs.cloud.google.com/storage/docs/requester-pays), with up to 2TB of data per month at no cost — but **only from a project subscribed to the dataset on the Marketplace**. Downloading from an unsubscribed project is billed at standard rates; see [Accessing the data](../README.md#accessing-the-data) for the required steps.
-> 
-> Access to the current GCS bucket (`gs://arc-scbasecount`) will be deprecated on **March 31, 2026**. Please update your workflows to use the Google Marketplace bucket `gs://arc-institute-virtual-cell-atlas`.
+**Data access**: This dataset is hosted on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) in the public bucket `gs://arc-institute-virtual-cell-atlas`. No Google Cloud project, billing account, or Marketplace subscription is needed to download it. See [Accessing the data](../README.md#accessing-the-data).
 
 ### An AI agent-curated, uniformly processed, and continually expanding single cell data repository
 
@@ -37,10 +32,8 @@ bioRxiv 2025.02.27.640494; doi: [https://doi.org/10.1101/2025.02.27.640494](http
 
 # Dataset location
 
-* [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) (Recommended)
+* [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute)
 * Google Cloud Storage (Google Marketplace bucket: `gs://arc-institute-virtual-cell-atlas`)
-* Google Cloud Storage (Deprecated: access ends March 31, 2026)
-  * Path: `gs://arc-scbasecount`
 
 See the tutorials below on programmatically accessing the data.
 
