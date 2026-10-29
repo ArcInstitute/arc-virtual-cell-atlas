@@ -12,13 +12,15 @@ To explore the atlas via a UI, you can take a look at its LaminDB mirror: https:
 
 # Accessing the data
 
-`gs://arc-institute-virtual-cell-atlas` is publicly readable and doesn't require a Google Cloud project or billing account. Download with the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) (`gcloud storage` or `gsutil`), or read directly from Python with `gcsfs`:
+`gs://arc-institute-virtual-cell-atlas` is publicly readable and doesn't require a Google Cloud project or billing account. Download with `gcloud storage` from the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk), or read files directly from Python with `gcsfs`:
 
 | Tool | Example |
 |------|---------|
-| `gsutil` | `gsutil -m rsync -r gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Callithrix_jacchus/ <DEST>` |
-| `gcloud storage` | `gcloud storage rsync -r gs://arc-institute-virtual-cell-atlas/virtual-cell-challenge/2025/validation/ <DEST>` |
-| Python (`gcsfs`) | `fs = gcsfs.GCSFileSystem()`, then `fs.open("gs://arc-institute-virtual-cell-atlas/...")` |
+| [`gcloud storage`](https://docs.cloud.google.com/sdk/gcloud/reference/storage) | `gcloud storage rsync -r gs://arc-institute-virtual-cell-atlas/virtual-cell-challenge/2025/validation/ <DEST>` |
+| [`gsutil`](https://docs.cloud.google.com/storage/docs/gsutil) (legacy) | `gsutil -m rsync -r gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Callithrix_jacchus/ <DEST>` |
+| Python ([`gcsfs`](https://gcsfs.readthedocs.io/en/latest/)) | `pd.read_parquet("gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/metadata/GeneFull_Ex50pAS/Homo_sapiens/sample_metadata.parquet", storage_options={"token": "anon"})` |
+
+Full Python and R walkthroughs are in the tutorial notebooks: scBaseCount ([Python](./scBaseCount/tutorial-py.ipynb), [R](./scBaseCount/tutorial-R.ipynb)), Tahoe-100M ([Python](./tahoe-100M/tutorial-py.ipynb)), Virtual Cell Challenge ([Python](./virtual-cell-challenge/tutorial-py.ipynb), [R](./virtual-cell-challenge/tutorial-R.ipynb)).
 
 Scope every transfer to the dataset prefix you actually need — syncing the bucket root pulls the entire atlas:
 
