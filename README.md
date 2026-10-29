@@ -12,7 +12,7 @@ To explore the atlas via a UI, you can take a look at its LaminDB mirror: https:
 
 # Accessing the data
 
-`gs://arc-institute-virtual-cell-atlas` is publicly readable. Download with the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) (`gcloud storage` or `gsutil`), or read directly from Python with `gcsfs`:
+`gs://arc-institute-virtual-cell-atlas` is publicly readable and doesn't require a Google Cloud project or billing account. Download with the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) (`gcloud storage` or `gsutil`), or read directly from Python with `gcsfs`:
 
 | Tool | Example |
 |------|---------|
