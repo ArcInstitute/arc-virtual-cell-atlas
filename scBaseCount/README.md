@@ -1,7 +1,7 @@
 scBaseCount
 ===========
 
-**Data access**: This dataset is hosted on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) in the public bucket `gs://arc-institute-virtual-cell-atlas`. No Google Cloud project, billing account, or Marketplace subscription is needed to download it. See [Accessing the data](../README.md#accessing-the-data).
+**Data access**: This dataset is hosted on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) in the public bucket `gs://arc-institute-virtual-cell-atlas`. See [Accessing the data](../README.md#accessing-the-data).
 
 ### An AI agent-curated, uniformly processed, and continually expanding single cell data repository
 

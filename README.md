@@ -1,7 +1,7 @@
 Arc Virtual Cell Atlas
 ======================
 
-**Data access**: The atlas is hosted on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) in the public bucket `gs://arc-institute-virtual-cell-atlas`. No Google Cloud project, billing account, or Marketplace subscription is needed to download it. See [Accessing the data](#accessing-the-data).
+**Data access**: The atlas is hosted on the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute) in the public bucket `gs://arc-institute-virtual-cell-atlas`. See [Accessing the data](#accessing-the-data).
 
 The Arc Virtual Cell Atlas is a collection of high quality, curated, open datasets assembled for the purpose of accelerating the creation of virtual cell models.
 The atlas includes both observational and perturbational data from over 602 million cells (and growing).
@@ -11,6 +11,8 @@ The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M 
 To explore the atlas via a UI, you can take a look at its LaminDB mirror: https://lamin.ai/laminlabs/arc-virtual-cell-atlas
 
 # Accessing the data
+
+`gs://arc-institute-virtual-cell-atlas` is publicly readable. Download with the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk) (`gcloud storage` or `gsutil`), or read directly from Python with `gcsfs`:
 
 | Tool | Example |
 |------|---------|
