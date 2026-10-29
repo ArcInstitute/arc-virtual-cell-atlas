@@ -12,8 +12,6 @@ To explore the atlas via a UI, you can take a look at its LaminDB mirror: https:
 
 # Accessing the data
 
-`gs://arc-institute-virtual-cell-atlas` is publicly readable. You don't need a Google Cloud project, a billing account, or a billing-project flag (`gsutil -u`, `gcloud storage --billing-project`), and there is no Marketplace subscription step — the listing only offers **View dataset**.
-
 | Tool | Example |
 |------|---------|
 | `gsutil` | `gsutil -m rsync -r gs://arc-institute-virtual-cell-atlas/scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Callithrix_jacchus/ <DEST>` |
@@ -22,11 +20,11 @@ To explore the atlas via a UI, you can take a look at its LaminDB mirror: https:
 
 Scope every transfer to the dataset prefix you actually need — syncing the bucket root pulls the entire atlas:
 
-| Prefix | Contents |
-|--------|----------|
-| `gs://arc-institute-virtual-cell-atlas/scbasecount/` | scBaseCount, partitioned by release, quantification, and species (e.g. `scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Homo_sapiens/` is several TB) |
-| `gs://arc-institute-virtual-cell-atlas/tahoe100M/` | Tahoe-100M |
-| `gs://arc-institute-virtual-cell-atlas/virtual-cell-challenge/` | Virtual Cell Challenge data |
+| Prefix | Contents | Size |
+|--------|----------|------|
+| `gs://arc-institute-virtual-cell-atlas/scbasecount/` | scBaseCount, partitioned by release, quantification, and species | 39.5 TiB (e.g. `scbasecount/2026-01-12/h5ad/GeneFull_Ex50pAS/Homo_sapiens/` is 3.1 TiB) |
+| `gs://arc-institute-virtual-cell-atlas/tahoe100M/` | Tahoe-100M | 316 GiB |
+| `gs://arc-institute-virtual-cell-atlas/virtual-cell-challenge/` | Virtual Cell Challenge data | 5.3 TiB (5.28 TiB is raw FASTQ under `2025/FASTQ/`) |
 
 Check a prefix's size before transferring it, e.g. `gcloud storage du -s --readable-sizes gs://arc-institute-virtual-cell-atlas/tahoe100M/`
 
