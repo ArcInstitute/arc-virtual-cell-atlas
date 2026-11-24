@@ -10,6 +10,8 @@ The atlas is bootstrapped with [Tahoe’s](https://www.tahoebio.ai/) Tahoe-100M 
 
 To explore the atlas via a UI, you can take a look at its LaminDB mirror: https://lamin.ai/laminlabs/arc-virtual-cell-atlas
 
+To open the atlas in a hosted Jupyter notebook with the bucket mounted read-only, so files are read on access rather than transferred first, see [Scigantic](https://scigantic.com/archive/1f9d055f-0125-543d-82f2-2cf406045068) (requires a free account).
+
 # Accessing the data
 
 `gs://arc-institute-virtual-cell-atlas` is publicly readable and doesn't require a Google Cloud project or billing account. Download with `gcloud storage` from the [Google Cloud CLI](https://docs.cloud.google.com/sdk/docs/install-sdk), or read files directly from Python with `gcsfs`:
